@@ -1,0 +1,830 @@
+/* 
+ * Hagamos Una Vaquita
+ * @author: Natalia Devalle, Nahuel Rubio, Germán Bringas
+ * @sections: $CHICO, $GENERAL
+ * @tags: 
+ * @usage: Press Ctrl + F and search for sections or tags
+ */
+
+
+/***************************
+********** $CHICO **********
+* overwriting chico styles *
+****************************/
+
+.ch-form legend {
+	font-size: 20px;
+	font-weight: normal;
+	color: #333;
+}
+
+.ch-btn {
+
+		padding: 10px 20px;
+		-webkit-box-shadow: inset 0 1px #D9000F;
+		box-shadow: inset 0 1px #D9000F;
+		border-color: #72020A; 
+		background: #AE000C; 
+		background: -moz-linear-gradient(top,  #AE000C 0%, #72020A 100%); 
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#AE000C), color-stop(100%,#72020A));
+		background: -webkit-linear-gradient(top,  #AE000C 0%,#72020A 100%);  
+		background: -o-linear-gradient(top,  #AE000C 0%,#72020A 100%); 
+		background: -ms-linear-gradient(top,  #AE000C 0%,#72020A 100%); 
+		background: linear-gradient(to bottom,  #AE000C 0%,#72020A 100%); 
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#AE000C', endColorstr='#72020A',GradientType=0 ); 
+}
+
+.ch-btn:hover {
+		padding: 10px 20px;
+			box-shadow: inset 0 1px #D9000F;
+		background: #C2000D; /* Old browsers */
+		background: -moz-linear-gradient(top,  #C2000D 0%, #72020A 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#C2000D), color-stop(100%,#72020A)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #C2000D 0%,#72020A 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #C2000D 0%,#72020A 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #C2000D 0%,#72020A 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #C2000D 0%,#72020A 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C2000D', endColorstr='#72020A',GradientType=0 ); /* IE6-9 */
+
+}
+	/*.ch-form-row label {
+		display: block;
+		text-align: left;
+		padding-bottom: 0;
+		width: auto;
+		min-height: 20px;
+	}
+
+	.ch-form-row label em {
+		position: relative;
+		display: inline;
+		margin-left: 5px;
+		top: 0;
+	}
+
+	/* radios and checkboxes 
+	.ch-form-row input[type=radio] + label, 
+	.ch-form-row input[type=checkbox] + label {
+		display: inline;
+	}
+
+	.ch-form-row .ch-form-hint,
+	.ch-form-options, /* radios 
+	.ch-form-actions{
+		margin-left: 0px; 
+	}
+
+	textarea {
+		max-width: 100%;
+	}*/
+
+	.ch-form-row label {
+		width: 160px;
+	}
+
+	.ch-form-actions,
+	.ch-form-row .ch-form-hint,
+	.me-included,
+	.add-email {
+		margin-left: 175px;
+	}
+
+	.ch-form-actions {
+		clear: both;
+	}
+
+	.ch-icon-question-sign,
+	.ch-icon-remove-sign {
+		cursor: pointer;
+		display: inline-block;
+	}
+
+
+	hr {
+		background: transparent;
+		height: 0px;
+		border-top: 1px solid #F6F6E4;
+		border-bottom: 1px solid #E3E2D2;
+		box-shadow: 0px 3px 5px -5px #8F3802;
+	}
+/*****************************
+********** $GENERAL **********
+******************************/
+
+body {
+	min-width: 320px;
+	max-width: 100%;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+	/*background: url(./assets/bg.png) repeat;*/
+	font-size: 14px;
+	background: #f0eedf;
+}
+
+
+
+header {
+	z-index: 1;
+	margin-top: 0px;
+	height: 50px;
+	border-bottom: 1px solid #ccc;
+	padding: 0 30px;
+	/*-webkit-box-shadow: 0px 3px 5px -5px #8F3802;
+	box-shadow: 0px 3px 5px -5px #8F3802;*/
+		background: #8E040E; /* Old browsers */
+		z-index: 1000;
+		
+}
+
+
+header h1 {
+	font-family: 'Quando', serif;
+	font-size: 24px;
+	color: #ffffff;
+	text-shadow: 0 1px 0 #333;
+	width: 35%;
+	float: left;
+	line-height: 50px;
+	margin: 0;
+	font-weight: 200;
+
+
+}
+
+
+.how-does-it-work,
+.fees,
+.header-wrapper,
+.footer-wrapper,
+section,
+hr  {
+	max-width: 1200px;
+	margin: 0px auto 0;
+}
+
+/* home */
+
+.welcome {
+	max-width: 100%;
+	margin: -1px auto;
+	padding: 0px 0px 50px;
+	text-align: left;
+	background: url(../images/vaquita.jpg) no-repeat top center;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 450px;
+    border-bottom: 5px solid #8E040E;
+}
+
+/*
+.tagline {
+	background-color: rgba(0, 0, 0, 0.419608);
+	padding: 20px;
+	color: #ccc;
+	width: 50%;
+}
+*/
+.welcome h1 {
+	max-width: 500px;
+	color: #fff;
+	font-size: 80px;
+	line-height: 90px;
+	margin: 0;
+	text-shadow: 0 2px 0 #333;
+	padding: 60px 80px;
+}
+
+.welcome h1 span {
+	display: block;
+	font-size: 50px;
+	line-height: 60px;
+	font-weight: 300;
+}
+
+.welcome .ch-btn-big, 
+.welcome .ch-btn-big:focus {
+	margin: 0px 80px;
+	font-weight: normal;
+	font-size: 24px;
+}
+
+.how-does-it-work,
+.fees {
+	text-align: center;
+	padding: 30px;
+}
+
+.how-does-it-work{
+	/*background: #e9e9e9;*/
+	background: #f0eedf;
+
+}
+
+
+
+.fees {
+	background: #f0eedf;
+	margin: 30px 30px 80px;
+}
+
+.how-does-it-work h1,
+.fees h1 {
+	font-size: 60px;
+	line-height: 70px;
+	padding: 50px 0;
+}
+.how-does-it-work ol {
+	margin: 50px auto;
+	list-style-type: none;
+	width: 80%;
+
+}
+.how-does-it-work ol li {
+	display: block;
+	margin: 20px auto;
+	text-align: left;
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+}
+
+.how-does-it-work h3,
+.fees h2 {
+	font-size: 20px;
+	line-height: 28px;
+	color: #666;
+}
+
+.how-does-it-work p {
+	margin: 10px 0;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.organize,
+.divide {
+	padding-right: 60%;
+}
+
+.organize {
+	background: url(../images/organize2.png) no-repeat right center;
+}
+
+.connect-mp {
+	background: url(../images/connect-mp.png) no-repeat left center;
+}
+
+.divide {
+	background: url(../images/divide.png) no-repeat right center;
+	padding-right: 50%;
+}
+
+.connect-mp,
+.receive {
+	padding-left: 60%;
+}
+
+.how-does-it-work h2 {
+	font-size: 36px;
+	line-height: 44px;
+	font-family: 'Quando', serif;
+}
+
+.fees h2{
+	max-width: 600px;
+	margin: 0px auto 40px;
+}
+
+/* create */
+
+.create {
+	padding: 0px 40px;
+}
+
+.ch-form {
+	margin: 30px 0;
+}
+.ch-form-actions {
+	margin-top: 20px;
+}
+
+#moreEmail .ch-form-row input {
+	margin-left: 4px; /* I don't understand why I need this */
+}
+
+.ch-icon-remove-sign:before{
+	color: red;
+}
+
+.ch-icon-plus-sign:before{
+	color: green;
+}
+
+	.add-email a:hover{
+		text-decoration: none;
+	}
+
+.ch-form fieldset {
+	margin: 10px 0 40px;
+}
+aside.ch-g1-3 {
+	margin-top: 30px;
+	width: 32%;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 10px 20px 20px;
+	border-radius: 3px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.summary dt,
+.summary dd {
+	float: left;
+	padding: 5px 0;
+}
+
+.summary dt {
+	clear: both;
+	width: 60%;
+}
+.summary dd {
+	width: 40%;
+	text-align: right;
+}
+
+.disclaimer {
+	font-size: 12px;
+	margin-top: 20px;
+}
+
+footer {
+	font-size: 12px;
+	color: #fff;
+	padding: 30px 0;
+	clear: both;
+	min-height: 200px;
+	background: #8E040E;
+}
+
+footer p,
+p+p {
+	padding: 5px 0;
+}
+
+.about {
+	background: url(../images/cow-iso.png) no-repeat left center;
+	padding-left: 200px;
+}
+
+.copyright {
+	font-family: 'Quando', serif;
+	font-size: 18px;
+}
+
+.more-nav {
+	margin: 20px 0;
+}
+.more-nav li {
+	display: inline-block;
+	border-left: 1px solid #ddd;
+	padding: 0px 10px
+}
+
+.more-nav li:first-child {
+	padding-left: 0;
+	border: none;
+}
+
+.social {
+	text-align: right;
+	
+}
+
+.social li {
+	text-align: left;
+	text-indent: -9999px;
+	display: inline-block;
+	border-radius: 32px;
+	margin: 0 15px;
+	background: #9B030E;
+}
+
+.twitter,
+.facebook,
+.email {
+	display: block;
+	width: 64px;
+	height: 64px;
+	opacity: .5;
+	background: url(../images/social.png) no-repeat;
+}
+
+.twitter {
+	background-position: 0 0px;
+}
+
+.facebook {
+	background-position: 0 -64px;
+}
+
+.email {
+	background-position: 0 -128px;
+}
+
+.social li:hover {
+	background: #84010A;
+}
+
+.social li a:hover {
+	opacity: .8;
+}
+
+/* mobile */
+@media only screen and/*!YUI-Compressor */(max-width: 480px)  {
+
+	.ch-form-row label {
+		display: block;
+		text-align: left;
+		padding-bottom: 0;
+		width: auto;
+		min-height: 20px;
+	}
+
+	.ch-form-row label em {
+		position: relative;
+		display: inline;
+		margin-left: 5px;
+		top: 0;
+	}
+
+	/* radios and checkboxes */
+	.ch-form-row input[type=radio] + label, 
+	.ch-form-row input[type=checkbox] + label {
+		display: inline;
+	}
+
+	.ch-form-row .ch-form-hint,
+	.ch-form-options, 
+	.ch-form-actions{
+		margin-left: 0px; 
+
+	}
+	#moreEmail .ch-form-row input {
+		margin-left: 0px; /* I don't understand why I need this */
+		width: 94%;
+		display: inline-block;
+	}
+
+
+	input, 
+	textarea, 
+	select[multiple], 
+	.ch-form-select-multiple,
+	button {
+		margin-top: 0;
+		width: 100%;
+		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+		-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+		box-sizing: border-box;         /* Opera/IE 8+ */
+	}
+	.ch-form .ch-form-row,
+	.ch-form .ch-form-actions{
+		margin: 0 10px;
+	}
+
+	input[type="file"], 
+	input[type="checkbox"], 
+	input[type="radio"] {
+		width: auto;
+	}
+
+
+	header h1  {
+		color: #fff;
+		width: 100%;
+		float: none;
+		font-size: 22px;
+		text-align: center;
+
+	}
+
+	/* mobile */
+
+#nav:before{
+	color: #fff;
+	font-size: 26px;
+}
+
+nav {
+	position: absolute;
+	right: 0px;
+	top:12px;
+	left: 0px;
+	text-align: left;
+}
+
+nav label {
+	text-align: right;
+	display: inline-block;
+	width: 30px;	
+	cursor: pointer;
+  	user-select: none;
+  	margin-left: 12px;
+  	margin-top: 3px;
+}
+
+nav ul {
+	background: #fff;
+	padding: 0px;
+	margin: 10px 0px 20px 0;
+	background: #fff;
+	position: relative;
+	top: -1000px;
+	z-index: 2;
+	transition: 0.4s ease-in-out;
+	-o-transition: 0.4s ease-in-out;
+	-moz-transition: 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+
+}
+
+nav a {
+	display: inline-block;
+	width: 100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	padding: 15px;
+	font-size: 18px;
+	border-bottom: 1px solid #ccc;
+
+}
+nav ul li a:link,
+nav ul li a:visited {
+	color: #006da4;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	color: #fff;
+	background: #006da4;
+	text-decoration: none;
+}
+
+
+nav a:after {
+	font-family: 'icons';
+	content: "\f054";
+	position: absolute;
+	right: 20px;
+}
+nav input[type=checkbox] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+
+nav input[type=checkbox]:checked ~ ul {
+	top:0;
+
+transition: 0.9s ease-in-out;
+-o-transition: 0.9s ease-in-out;
+-moz-transition: 0.9s ease-in-out;
+-webkit-transition: all 0.9s ease-in-out;
+
+}
+
+
+.welcome {
+	
+	padding: 20px;
+	text-align: center;
+	background: none;
+    min-height: 300px;
+    border-bottom: 5px solid #8E040E;
+}
+
+
+.welcome h1 {
+	max-width: 100%;
+	font-size: 55px;
+	line-height: 65px;
+	padding: 20px 0;
+}
+
+
+.welcome h1 span {
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.welcome .ch-btn-big, 
+.welcome .ch-btn-big:focus {
+	margin: 20px 0;
+}
+
+
+.how-does-it-work,
+.fees {
+	padding: 10px;
+}
+
+
+
+.how-does-it-work h1,
+.fees h1 {
+	font-size: 45px;
+	line-height: 50px;
+	padding: 20px 0;
+}
+
+.how-does-it-work h2 {
+	font-size: 26px;
+	line-height: 34px;
+}
+
+.how-does-it-work ol {
+	margin: 20px auto;
+	width: 100%;
+}
+
+.how-does-it-work ol li {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+.organize,
+.divide,
+.connect-mp,
+.receive {
+	padding-right:10px;
+	background: none;
+	padding-left: 10px;
+}
+
+
+.create {
+	padding: 0px 10px;
+}
+
+
+	.ch-form legend {
+		margin: 0 10px;
+	}
+	
+	#amount {
+		width: 90px;
+		display: inline-block;
+	}
+
+	.add-email{
+		margin: 10px; 
+		text-align: right;
+	}
+
+
+
+	aside.ch-g1-3 {
+		width: auto;
+		margin: 10px 10px 30px;
+			-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	overflow: hidden;
+	}
+}
+
+
+/* big screens */
+@media only screen and/*!YUI-Compressor */(min-width: 600px) {
+
+
+nav {
+	width: 60%;
+	float: right;
+	text-align: right;
+
+}
+
+nav li {
+	display: inline-block;
+	padding: 0 10px;
+	line-height: 50px;
+	color: #fff;
+}
+
+nav a {
+	color: #fff;
+	padding: 7px 10px;
+}
+
+nav a:visited {
+	color: #fff;
+}
+
+nav a:hover {
+	text-decoration: none;
+	background: #006da4;
+	border-radius: 3px;
+}
+
+nav input,
+nav label {
+	display: none;
+}
+
+
+	/* overwriting chico */
+
+
+	body {
+		font-size: 14px;
+	}
+
+	/* bigger inputs */
+	input, textarea, select[multiple], .ch-form-select-multiple {
+		padding: 8px 6px;
+		font-size: 16px;
+	}
+
+	input:focus, textarea:focus, select[multiple]:focus, .ch-form-select-multiple:focus,
+	form .ch-form-error:focus {
+		padding: 7px 5px;
+	}
+
+	select {
+		padding: 3px;
+	}
+
+	.ch-form-row {
+		padding: 4px 0;
+	}
+
+	.ch-validation {
+		padding: 8px 5px 8px 25px;
+	}
+
+	.ch-validation:before {
+		top: 9px;
+	}
+
+	.ch-cone.ch-points-ltrt [class^="ch-"][class\$="-content"]:after,
+	.ch-cone.ch-points-rtlt [class^="ch-"][class\$="-content"]:after {
+		top: 10px;
+	}
+
+	.ch-cone.ch-points-ltrt [class^="ch-"][class\$="-content"]:before,
+	.ch-cone.ch-points-rtlt [class^="ch-"][class\$="-content"]:before {
+		top: 9px;
+	}
+
+	.ch-form {
+		margin-top: 20px;
+	}
+
+	
+
+
+		/* --- Input Sizes --- */
+	.extra-large {
+		width: 300px;
+	}
+	textarea.extra-large {
+		min-height: 50px;
+	}
+	.large {
+		width: 150px;
+	}
+
+	.medium {
+		width: 100px;
+	}
+
+	.small {
+		width: 60px;
+	}
+
+	.extra-small {
+		width: 40px;
+	}
+
+
+	
+	/* ^titles */
+
+	h1 {
+		font-size: 22px;
+	}
+
+	h2 {
+		font-size: 20px;
+	}
+
+	
+
+}
