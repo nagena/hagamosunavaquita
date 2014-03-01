@@ -8,6 +8,12 @@
 	var mailMsg = "Debes ingresar un mail con un formato valido.";
 	var priceMsg = "El formato del monto es incorrecto, recuerda utilizar solo . para los decimales.";
   	var payerEmailValidator = [];
+  	var initPoint;
+  	var partialAmount;
+  	var finalAmount;
+  	var originalAmount;
+  	var quantityForAmount;
+
 
 
 		$('#amount').priceFormat({
@@ -47,7 +53,11 @@
 	  	    	MELI.init({client_id: 8258968359213576});
 				MELI.login(function() {
 					token = MELI.getToken();
-				  	$.when(createPreference(), getUser()).then(function(){ $("form").submit(); }, function(){alert("Error");});
+				  	$.when(createPreference(), getUser()).then(function(){
+				  		$('#container').load('congrats.html', function() {
+        					$(this).html($(this).html().replace("initPoint", initPoint));
+   						})
+				  	}, function(){alert("Error");});
 				});
 			}else{
 				$('.ch-loading-big').hide();
@@ -114,7 +124,7 @@
 	};
 
 	function createPreference(){
-		var amount = unmaskPrice($("#amount").val());
+		var amount = unmaskPrice($("#amount"));
 		jsonToPost =  "{'items': [{'id': '" +
 			new Date().getTime() + "','title': '" + $("#description").val() + "', 'quantity': 1, 'unit_price': " + $("#partialAmount").html().replace("$","") + ", 'currency_id': 'ARS', 'picture_url': 'http://hagamosunavaquita.com.ar/cowww.png'} ], 'marketplace_fee' : " + ((amount * 0.016117021277)/countEmails).toFixed(2) +"  }";
 	    var url = "https://api.mercadolibre.com/checkout/preferences?access_token=" + token;
@@ -125,17 +135,12 @@
 		    success: function(data) {
 			    result = data;
 			    MELI.logout();
-			    $("#initPoint").val(result.init_point);
-			    var input = $("<input>").attr("type", "hidden").attr("name", "partialAmount").val($("#partialAmount").html().replace("$",""));
-			    $('form').append(input);	
-			    input = $("<input>").attr("type", "hidden").attr("name", "finalAmount").val($("#finalAmount").html().replace("$",""));
-			    $('form').append(input);
-			    input = $("<input>").attr("type", "hidden").attr("name", "originalAmount").val($("#originalAmount").html().replace("$",""));
-			    $('form').append(input);
-			    input = $("<input>").attr("type", "hidden").attr("name", "quantityForAmount").val($("#quantityForAmount").html());
-			    $('form').append(input);
-			    input = $("<input>").attr("type", "hidden").attr("name", "prefId").val(""+result.id+"");
-			    $('form').append(input);      
+			    initPoint = result.init_point;
+			    partialAmount = $("#partialAmount").html().replace("$","");
+			    finalAmount = $("#finalAmount").html().replace("$","");
+			    originalAmount = $("#originalAmount").html().replace("$","");
+			    quantityForAmount = $("#quantityForAmount").html();
+   
 		 }});
 	};
 
