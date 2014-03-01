@@ -44,7 +44,6 @@
 	  	});
 			
 		$('form').submit(function(e) {
-			$('.ch-loading-big').show();
 			e = e || window.event;
 			e.preventDefault();
 			var myForm = $('form').form();
@@ -63,19 +62,9 @@
    						})
 				  	}, function(){alert("Error");});
 				});
-			}else{
-				$('.ch-loading-big').hide();
 			}
 			return false;
 		});
-	
-		$('.ch-loading-big').hide()
-	    	.ajaxStart(function() {
-	        	$(this).show();
-	    	})
-	    	.ajaxStop(function() {
-	        	$(this).hide();
-	    	});
 	
 		$("#addEmail").live('click', function(){
 			$("#moreEmail").append("<div class='ch-form-row' id='row" + countEmails + "'><label>Email:</label><input type='email' id='payer" + countEmails + "' name='payer' class='extra-large'> <i id='remove1" + countEmails + "' class='ch-icon-remove-sign remove'></i></div>");
