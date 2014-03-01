@@ -24,7 +24,9 @@
 				    {
 				        event.preventDefault();
 				        var href = $(this).attr('href');
+				        var title = $(this).attr('title');
 				        $('#container').load(href);
+				        history.pushState(null, title, href);
 				        return false;
 				    });
 			}
@@ -38,10 +40,10 @@
 					<input type="checkbox" id="menu" />
 					<label class="ch-icon-reorder" id="nav" for="menu" onclick></label>
 					<ul>
-						<li><a href="home.html">Inicio</a></li>
-						<li><a href="create.html">Hacé una vaquita</a></li>
-						<li><a href="faq.html">Preguntas Frecuentes</a></li>
-						<li><a href="contact.html">Contacto</a></li>
+						<li><a href="home.html" title="Inicio">Inicio</a></li>
+						<li><a href="create.html" title="Hacé una vaquita">Hacé una vaquita</a></li>
+						<li><a href="faq.html" title="Preguntas Frecuentes">Preguntas Frecuentes</a></li>
+						<li><a href="contact.html" title="Contacto">Contacto</a></li>
 					</ul>
 				</nav>
 			</div>
