@@ -16,6 +16,19 @@
 		<link rel="stylesheet" type="text/css" href="http://static.mlstatic.com/org-img/ch/ui/0.13.2/chico-mesh.min.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Quando' rel='stylesheet' type='text/css'>
+		<script src="http://static.mlstatic.com/org-img/ch/ui/0.13.2/chico-jquery.min.js" defer onload="init();"></script>
+		<script src="js/pace.js" async></script>
+		<script type="text/javascript">
+			function init(){
+				$('#header a, #container a').click(function(event) 
+				    {
+				        event.preventDefault();
+				        var href = $(this).attr('href');
+				        $('#container').load(href);
+				        return false;
+				    });
+			}
+		</script>
 	</head>
 	<body>
 		<header>
@@ -33,14 +46,11 @@
 				</nav>
 			</div>
 		</header>
-		<script src="http://static.mlstatic.com/org-img/ch/ui/0.13.2/chico-jquery.min.js"></script>
 		<!-- body -->
 		<div id='container'>
 			<section class="welcome">
 				<h1>Vos organizá, <span>nosotros te ayudamos a juntar la plata</span></h1>
-				<form name="homeForm" id="homeForm" action="/create">
-					<input id="goToCreate" class="ch-btn ch-btn-big" type="submit" name="goToCreate" target="_self" value="Hacé una vaquita">
-				</form>
+				<a href="create.html" class="ch-btn ch-btn-big">Hacé una vaquita</a>	
 			</section>
 			<!--<section class="use-cases">
 				¿Llegó la hora de pagar la cuenta del bar y nadie tiene cambio?<br>
@@ -76,9 +86,7 @@
 			<section class="fees">
 				<h1>¡Es gratis!</h1>
 				<h2>Los costos del servicio se dividen entre los que te pagan. Así, vos recibís la totalidad de lo que necesitabas juntar.</h2>
-				<form name="homeForm" id="homeForm" action="/create">
-					<input id="goToCreate" class="ch-btn ch-btn-big" type="submit" name="goToCreate" target="_self" value="Hacé una vaquita">
-				</form>
+				<a href="create.html" class="ch-btn ch-btn-big">Hacé una vaquita</a>	
 			</section>
 		</div>
 		<!-- end body-->
@@ -105,18 +113,8 @@
 				</div>
 			</div>
 		</footer>
-		<script type="text/javascript">
-			$('#header a, #container a').click(function(event) 
-			    {
-			        event.preventDefault();
-			        var href = $(this).attr('href');
-			        $('#container').load(href);
-			        return false;
-			    });
-		</script>
 		<script src="js/enquire.min.js" async></script>
-		<script src="js/pace.js" async></script>
-		<script src="js/jquery.price_format.min.js" async></script>
+		<script src="js/jquery.price_format.min.js" defer></script>
 		<script src="http://static.mlstatic.com/org-img/sdk/mercadolibre-1.0.4.js" async></script>
 	</body>
 </html>
