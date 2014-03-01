@@ -26,9 +26,12 @@
 				        var href = $(this).attr('href');
 				        var title = $(this).attr('title');
 				        $('#container').load(href);
-				        history.pushState(null, title, href);
+				        history.pushState({"href":"home.html"}, title, href);
 				        return false;
 				    });
+				window.addEventListener("popstate", function(e) {
+    				$('#container').load(e.href);
+				});
 			}
 		</script>
 	</head>

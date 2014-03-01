@@ -13,7 +13,7 @@
   	var finalAmount;
   	var originalAmount;
   	var quantityForAmount;
-
+  	var description;
 
 
 		$('#amount').priceFormat({
@@ -56,6 +56,10 @@
 				  	$.when(createPreference(), getUser()).then(function(){
 				  		$('#container').load('congrats.html', function() {
         					$(this).html($(this).html().replace("initPoint", initPoint));
+        					$(this).html($(this).html().replace("partialAmount", partialAmount));
+        					$(this).html($(this).html().replace("finalAmount", finalAmount));
+        					$(this).html($(this).html().replace("description", description));
+
    						})
 				  	}, function(){alert("Error");});
 				});
@@ -140,6 +144,7 @@
 			    finalAmount = $("#finalAmount").html().replace("$","");
 			    originalAmount = $("#originalAmount").html().replace("$","");
 			    quantityForAmount = $("#quantityForAmount").html();
+			    description = $("#description").val() ;
    
 		 }});
 	};
