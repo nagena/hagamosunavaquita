@@ -18,6 +18,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Quando' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+				<div id='container'>
 		<header>
 			<div class="header-wrapper">
 				<h1>Hagamos una vaquita</h1>
@@ -25,10 +26,10 @@
 					<input type="checkbox" id="menu" />
 					<label class="ch-icon-reorder" id="nav" for="menu" onclick></label>
 					<ul>
-						<li><a href="">Inicio</a></li>
-						<li><a href="">Hacé una vaquita</a></li>
-						<li><a href="">Preguntas Frecuentes</a></li>
-						<li><a href="">Contacto</a></li>
+						<li><a href="home.html">Inicio</a></li>
+						<li><a href="create.html">Hacé una vaquita</a></li>
+						<li><a href="faq.html">Preguntas Frecuentes</a></li>
+						<li><a href="contact.html">Contacto</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -43,9 +44,9 @@
 
 		<section class="welcome">
 		<h1>Vos organizá, <span>nosotros te ayudamos a juntar la plata</span></h1>
-		<g:form name="homeForm" url="[action:'create',controller:'vaquita']">
-			<g:submitButton class="ch-btn ch-btn-big" name="goToCreate" value="Hacé una vaquita" />
-		</g:form>
+		<form name="homeForm" id="homeForm" action="/create">
+			<input id="goToCreate" class="ch-btn ch-btn-big" type="submit" name="goToCreate" target="_self" value="Hacé una vaquita">
+		</form>
 
 		</section>
 
@@ -93,15 +94,24 @@
 		<section class="fees">
 			<h1>¡Es gratis!</h1>
 			<h2>Los costos del servicio se dividen entre los que te pagan. Así, vos recibís la totalidad de lo que necesitabas juntar.</h2>
-			<g:form name="homeForm" url="[action:'create',controller:'vaquita']">
-					<g:submitButton class="ch-btn ch-btn-big" name="goToCreate" value="Hacé una vaquita" />
-				</g:form>
+			<form name="homeForm" id="homeForm" action="/create">
+				<input id="goToCreate" class="ch-btn ch-btn-big" type="submit" name="goToCreate" target="_self" value="Hacé una vaquita">
+			</form>
 
 		</section>
 
 		<script src="js/jquery.js"></script>
 		<script src="js/chico-min-0.13.1.js"></script>
-
+		<script type="text/javascript">
+			$('#container a').click(function(event) 
+			    {
+			        event.preventDefault();
+			        var href = $(this).attr('href');
+			        $('#container').load(href);
+			        return false;
+			    });
+		</script>
+		</div>
 		<!-- end body-->	
 		
 
