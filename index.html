@@ -33,12 +33,7 @@
 				</nav>
 			</div>
 		</header>
-
-		<script src="js/enquire.min.js"></script>
 		<script src="http://static.mlstatic.com/org-img/ch/ui/0.13.2/chico-jquery.min.js"></script>
-		<script src="js/jquery.price_format.min.js"></script>
-		<script src="http://static.mlstatic.com/org-img/sdk/mercadolibre-1.0.4.js"></script>
-		
 		<!-- body -->
 		<div id='container'>
 			<section class="welcome">
@@ -85,17 +80,6 @@
 					<input id="goToCreate" class="ch-btn ch-btn-big" type="submit" name="goToCreate" target="_self" value="Hacé una vaquita">
 				</form>
 			</section>
-			<script src="js/jquery.js"></script>
-			<script src="js/chico-min-0.13.1.js"></script>
-			<script type="text/javascript">
-				$('#header a, #container a').click(function(event) 
-				    {
-				        event.preventDefault();
-				        var href = $(this).attr('href');
-				        $('#container').load(href);
-				        return false;
-				    });
-			</script>
 		</div>
 		<!-- end body-->
 		<footer>
@@ -121,5 +105,18 @@
 				</div>
 			</div>
 		</footer>
+		<script type="text/javascript">
+			$('#header a, #container a').click(function(event) 
+			    {
+			        event.preventDefault();
+			        var href = $(this).attr('href');
+			        $('#container').load(href);
+			        return false;
+			    });
+		</script>
+		<script src="js/enquire.min.js" async></script>
+		<script src="js/jquery.price_format.min.js" async></script>
+		<script src="https://raw.github.com/HubSpot/pace/v0.4.17/pace.min.js" async></script>
+		<script src="http://static.mlstatic.com/org-img/sdk/mercadolibre-1.0.4.js" async></script>
 	</body>
 </html>
