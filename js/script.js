@@ -41,7 +41,6 @@
 
 	vaquitaApp.controller('validateController', function($scope) {
 		$scope.items = [{email:""}];
-        
         $scope.add = function () {
           $scope.items.push({ 
             email: ""

@@ -16,7 +16,7 @@
 				<fieldset data-step="who">
 					<legend>Quiénes ponen plata</legend>
 					<div class="ch-form-row me-included">
-						<input type="checkbox" id="meIncluded">
+						<input type="checkbox" id="meIncluded" ng-model="meIncluded" ng-true-value="1" ng-false-value="0">
 						<label for="meIncluded">Yo incluído</label> <i id="meIncludedHelp" class="ch-icon-question-sign"></i>
 					</div>
 					<div class="ch-form-row ch-form-required" ng-repeat="item in items">
@@ -38,9 +38,9 @@
 					<dt>Monto Total a Pagar: </dt>
 					<dd id="finalAmount" name="finalAmount">{{(amount  *  1.08).toFixed(2)}}</dd>
 					<dt>Ponen plata:</dt>
-					<dd id="quantityForAmount" name="quantityForAmount">1</dd>
+					<dd id="quantityForAmount" name="quantityForAmount">{{items.length -- meIncluded}}</dd>
 					<dt>Cuanto pone cada uno: </dt>
-					<dd id="partialAmount" name="partialAmount">{{((amount  *  1.08)/(items.length + 1)).toFixed(2)}}</dd>
+					<dd id="partialAmount" name="partialAmount">{{((amount  *  1.08)/(items.length -- meIncluded)).toFixed(2)}}</dd>
 				</dl>
 			</aside>
 			<div class="ch-form-actions">
