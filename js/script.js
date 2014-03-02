@@ -20,7 +20,10 @@
 			.when('/contact', {
 				templateUrl : 'pages/contact.html',
 				controller  : 'contactController'
-			})	});
+			})
+
+			$locationProvider.html5Mode(true);	
+		});
 
 	// create the controller and inject Angular's $scope
 	vaquitaApp.controller('mainController', function($scope) {
@@ -37,7 +40,7 @@
 	});
 
 	vaquitaApp.controller('validateController', function($scope) {
-		$scope.items = [];
+		$scope.items = [{email:""}];
         
         $scope.add = function () {
           $scope.items.push({ 
@@ -45,8 +48,8 @@
           });
         };
 
-        $scope.remove = function () {
-          $scope.items.pop();
+        $scope.remove = function (idx) {
+          $scope.items.splice(idx, 1);
         };
 
 		$scope.submitForm = function() {

@@ -22,7 +22,7 @@
 					<div class="ch-form-row ch-form-required" ng-repeat="item in items">
 						<label>Email: <em>*</em></label>
 						<input type="email" class="extra-large" type="email" ng-model="email" ng-required="true">
-						<i class='ch-icon-remove-sign remove' ng-click="remove()"></i>
+						<i class='ch-icon-remove-sign remove' ng-click="remove($index)"></i>
 					</div>
 					<div id="moreEmail"></div>	
 					<span class="add-email"><a ng-click="add()"><i class="ch-icon-plus-sign"></i> Agregar otro</a></span>
