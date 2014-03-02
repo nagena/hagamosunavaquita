@@ -52,16 +52,23 @@
         };
 
 		$scope.submitForm = function() {
-
 			// check to make sure the form is completely valid
 			if ($scope.createForm.$valid) {
 				MELI.init({client_id: 8258968359213576});
 				MELI.login(function() {
 					var token = MELI.getToken();
-				});
-				alert(token);
-			}
+					var jsonToPost =  "{'items': [{'id': '" + 'prueba' + "','title': '" + $scope.description + "', 'quantity': 1, 'unit_price': " + (($scope.amount  *  1.08)/($scope.items.length + $scope.meIncluded)).toFixed(2) + ", 'currency_id': 'ARS', 'picture_url': 'http://hagamosunavaquita.com.ar/cowww.png'} ] }";
+	    			var url = "https://api.mercadolibre.com/checkout/preferences?access_token=" + token;
 
+					$http({method: 'POST', url: url}).
+					    success(function(data, status, headers, config) {
+					      alert(data);
+					    }).
+					    error(function(data, status, headers, config) {
+					      alert(status);
+					    });
+				});
+			}
 		};
 	});
 
