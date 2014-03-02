@@ -37,6 +37,18 @@
 	});
 
 	vaquitaApp.controller('validateController', function($scope) {
+		$scope.items = [];
+        
+        $scope.add = function () {
+          $scope.items.push({ 
+            email: ""
+          });
+        };
+
+        $scope.remove = function () {
+          $scope.items.pop();
+        };
+
 		$scope.submitForm = function() {
 
 			// check to make sure the form is completely valid
@@ -50,4 +62,4 @@
 
 		};
 	});
-	
+

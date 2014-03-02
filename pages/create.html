@@ -19,12 +19,13 @@
 						<input type="checkbox" id="meIncluded">
 						<label for="meIncluded">Yo incluído</label> <i id="meIncludedHelp" class="ch-icon-question-sign"></i>
 					</div>
-					<div class="ch-form-row ch-form-required">
+					<div class="ch-form-row ch-form-required" ng-repeat="item in items">
 						<label>Email: <em>*</em></label>
-						<input type="email" id="payer" name="payer" class="extra-large" type="email" ng-model="payer" ng-required="true">
+						<input type="email" class="extra-large" type="email" ng-model="email" ng-required="true">
+						<i class='ch-icon-remove-sign remove' ng-click="remove()"></i>
 					</div>
 					<div id="moreEmail"></div>	
-					<span class="add-email"><a id="addEmail"><i class="ch-icon-plus-sign"></i> Agregar otro</a></span>
+					<span class="add-email"><a ng-click="add()"><i class="ch-icon-plus-sign"></i> Agregar otro</a></span>
 				</fieldset>
 			</div>
 			<aside data-step="summary" class="ch-g1-3">
@@ -39,7 +40,7 @@
 					<dt>Ponen plata:</dt>
 					<dd id="quantityForAmount" name="quantityForAmount">1</dd>
 					<dt>Cuanto pone cada uno: </dt>
-					<dd id="partialAmount" name="partialAmount">{{((amount  *  1.08)/2).toFixed(2)}}</dd>
+					<dd id="partialAmount" name="partialAmount">{{((amount  *  1.08)/(items.length + 1)).toFixed(2)}}</dd>
 				</dl>
 			</aside>
 			<div class="ch-form-actions">
