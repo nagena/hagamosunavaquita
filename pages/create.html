@@ -1,68 +1,49 @@
-			<script src="js/create.js" async></script>
-
-	<section class="create">	
-		<form class="ch-form " name="createForm" id="createForm" action="/congrats.html">	
+	<section class="create" ng-controller="validateController">	
+		<form class="ch-form" name="createForm" id="createForm"  ng-submit="submitForm()" novalidate>	
 			<input type="hidden" id="initPoint" name="initPoint" value="">
 			<div class="ch-g2-3">
 				<fieldset data-step="reason">
-					
 					<legend>Para qué juntamos plata</legend>
-
 					<div class="ch-form-row ch-form-required">
 						<label>Motivo: <em>*</em></label>
-						<textarea id="description" class="extra-large" name="description"></textarea>
+						<textarea id="description" class="extra-large" name="description" ng-model="description" required></textarea>
 					</div>
-
 					<div class="ch-form-row ch-form-required">
 						<label>Hay que juntar: <em>*</em></label>
-						$ <input type="text" pattern="[0-9]*" id="amount" name="amount" class="small" value="0">
+						$ <input type="number" class="small" ng-init="amount='0'" ng-model="amount" min="1" required>
 					</div>
-
-					
 				</fieldset>
-
 				<fieldset data-step="who">
-					
 					<legend>Quiénes ponen plata</legend>
-
 					<div class="ch-form-row me-included">
 						<input type="checkbox" id="meIncluded">
 						<label for="meIncluded">Yo incluído</label> <i id="meIncludedHelp" class="ch-icon-question-sign"></i>
 					</div>
 					<div class="ch-form-row ch-form-required">
 						<label>Email: <em>*</em></label>
-						<input type="email" id="payer" name="payer" class="extra-large">
+						<input type="email" id="payer" name="payer" class="extra-large" type="email" ng-model="payer" ng-required="true">
 					</div>
 					<div id="moreEmail"></div>	
-					<span class="add-email"><a href="javascript:void(0);" id="addEmail"><i class="ch-icon-plus-sign"></i> Agregar otro</a></span>
+					<span class="add-email"><a id="addEmail"><i class="ch-icon-plus-sign"></i> Agregar otro</a></span>
 				</fieldset>
 			</div>
 			<aside data-step="summary" class="ch-g1-3">
-
 				<h2>Revisa y confirma</h2>
-
 				<dl class="summary">
-					
 					<dt>Hay que juntar: </dt>
-					<dd id="originalAmount" name="originalAmount"></dd>
-
+					<dd>{{amount}}</dd>
 					<dt>Costo del servicio: <i id="servicesCostsHelp" class="ch-icon-question-sign"></i></dt>
-					<dd id="serviceAmount" name="serviceAmount"></dd>
-					
+					<dd id="serviceAmount" name="serviceAmount">{{(amount *  0.08).toFixed(2)}}</dd>
 					<dt>Monto Total a Pagar: </dt>
-					<dd id="finalAmount" name="finalAmount"></dd>
-					
+					<dd id="finalAmount" name="finalAmount">{{(amount  *  1.08).toFixed(2)}}</dd>
 					<dt>Ponen plata:</dt>
 					<dd id="quantityForAmount" name="quantityForAmount">1</dd>
-
 					<dt>Cuanto pone cada uno: </dt>
-					<dd id="partialAmount" name="partialAmount"></dd>
-
+					<dd id="partialAmount" name="partialAmount">{{((amount  *  1.08)/2).toFixed(2)}}</dd>
 				</dl>
-		
 			</aside>
 			<div class="ch-form-actions">
-				<button class="ch-btn ch-btn-big" id="next">Confirmar la vaquita</button>
+				<button class="ch-btn ch-btn-big" id="next" type="submit" ng-disabled="createForm.$invalid">Confirmar la vaquita</button>
 				<p class="disclaimer">Necesitamos tu permiso para juntar la plata y depositarla en tu cuenta de MercadoPago, por eso al confirmar, te pediremos que conectes tu cuenta.</p>
 			</div>
 		</form>

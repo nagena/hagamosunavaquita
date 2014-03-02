@@ -2,10 +2,9 @@
 	var vaquitaApp = angular.module('vaquitaApp', ['ngRoute']);
 
 	// configure our routes
-	vaquitaApp.config(function($routeProvider) {
+	vaquitaApp.config(function($locationProvider, $routeProvider) {
+		//$locationProvider.html5Mode(true);
 		$routeProvider
-
-			// route for the home page
 			.when('/', {
 				templateUrl : 'pages/home.html',
 				controller  : 'mainController'
@@ -14,18 +13,14 @@
 				templateUrl : 'pages/create.html',
 				controller  : 'aboutController'
 			})
-			// route for the about page
 			.when('/faq', {
 				templateUrl : 'pages/faq.html',
 				controller  : 'aboutController'
 			})
-
-			// route for the contact page
 			.when('/contact', {
 				templateUrl : 'pages/contact.html',
 				controller  : 'contactController'
-			});
-	});
+			})	});
 
 	// create the controller and inject Angular's $scope
 	vaquitaApp.controller('mainController', function($scope) {
@@ -40,3 +35,19 @@
 	vaquitaApp.controller('contactController', function($scope) {
 		$scope.message = 'Contact us! JK. This is just a demo.';
 	});
+
+	vaquitaApp.controller('validateController', function($scope) {
+		$scope.submitForm = function() {
+
+			// check to make sure the form is completely valid
+			if ($scope.createForm.$valid) {
+				MELI.init({client_id: 8258968359213576});
+				MELI.login(function() {
+					var token = MELI.getToken();
+				});
+				alert(token);
+			}
+
+		};
+	});
+	

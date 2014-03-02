@@ -90,22 +90,15 @@
 	
 		var meIncludedHelp = $("#meIncludedHelp").tooltip("Vamos a descontar también tu parte.");
 		var servicesCostsHelp = $("#servicesCostsHelp").tooltip("%5.99 de Comisión MercadoPago<br>%2.01 de Comisión HagamosUnaVaquita");
-		//var connectMPHelp = $("#connectMPHelp").tooltip("HagamosUnaVaquita necesita tu permiso para juntar la plata y depositarla en tu cuenta MercadoPago.");
-	
+
 		meIncludedHelp.position({
 			"points": "lm rm",
 			"offset": "10 0"
 		});
-	//	connectMPHelp.position({
-	//		"points": "lm rm",
-	//		"offset": "10 0"
-	//	});
 		servicesCostsHelp.position({
 			"points": "cb ct",
 			"offset": "0 -10"
 		});
-
-	
 	
 	function calculate(){
 		var amount = unmaskPrice($("#amount"));
@@ -152,20 +145,4 @@
 			    $('form').append(input);   
 		      }});
 	};
-	  	
-	  	
-
-	  	// Show who fieldset as steps
-	  	/*$("#reason").bind("click", function(){
-	  		event.preventDefault();
-	  		$("fieldset[data-step='reason']").addClass("ch-hide");
-	  		$("fieldset[data-step='who']").removeClass("ch-hide");
-	  	})
-	  	 
-	  	// Show summary fieldset as steps
-	  	$("#who").bind("click", function(){
-	  		event.preventDefault();
-	  		$("fieldset[data-step='who']").addClass("ch-hide");
-	  		$("fieldset[data-step='summary']").removeClass("ch-hide");
-	  	})*/
 	  	 
