@@ -60,7 +60,8 @@
 					var jsonToPost =  {'items': [{'id': '123','title': $scope.description, 'quantity': 1, 'unit_price': parseFloat($scope.partialAmount), 'currency_id': 'ARS', 'picture_url': 'http://hagamosunavaquita.com.ar/cowww.png'}]};
 	    			var url = "/checkout/preferences";
 					MELI.post(url, jsonToPost, function(data) {
-						console.log(data);
+						$scope.initPoint = data[2].init_point;
+						$location.path('pages/congrats.html');
 					});
 				});
 			}
