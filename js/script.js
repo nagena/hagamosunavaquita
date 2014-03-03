@@ -59,26 +59,13 @@
 					var token = MELI.getToken();
 					var jsonToPost =  "{'items': [{'id': '" + 'prueba' + "','title': '" + $scope.description + "', 'quantity': 1, 'unit_price': " + (($scope.amount  *  1.08)/($scope.items.length + $scope.meIncluded)).toFixed(2) + ", 'currency_id': 'ARS', 'picture_url': 'http://hagamosunavaquita.com.ar/cowww.png'} ] }";
 	    			var url = "https://api.mercadolibre.com/checkout/preferences?access_token=" + token;
-
-					$http({
-				        method  : 'JSONP',
-				        url     : url,
-				        data    : jsonToPost,  
-				        headers : { 'Content-Type': 'application/json' }
-				    })
-				        .success(function(data) {
-				            console.log(data);
-
-				            if (!data.success) {
-				            	// if not successful, bind errors to error variables
-				    
-				            } else {
-				            	// if successful, bind success message to message
-				           
-				            }
-				        });
+					MELI.post(url, jsonToPost, function(data) {
+						console.log(data);
+					});
 				});
 			}
 		};
 	});
+
+
 
