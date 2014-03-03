@@ -60,7 +60,7 @@
 					var jsonToPost =  "{'items': [{'id': '" + 'prueba' + "','title': '" + $scope.description + "', 'quantity': 1, 'unit_price': " + (($scope.amount  *  1.08)/($scope.items.length + $scope.meIncluded)).toFixed(2) + ", 'currency_id': 'ARS', 'picture_url': 'http://hagamosunavaquita.com.ar/cowww.png'} ] }";
 	    			var url = "https://api.mercadolibre.com/checkout/preferences?access_token=" + token;
 
-					$http({method: 'POST', url: url}).
+					$http({method: 'JSONP', url: url}).
 					    success(function(data, status, headers, config) {
 					      alert(data);
 					    }).
