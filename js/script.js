@@ -11,15 +11,19 @@
 			})
 			.when('/create', {
 				templateUrl : 'pages/create.html',
-				controller  : 'aboutController'
+				controller  : 'mainController'
 			})
 			.when('/faq', {
 				templateUrl : 'pages/faq.html',
-				controller  : 'aboutController'
+				controller  : 'mainController'
 			})
 			.when('/contact', {
 				templateUrl : 'pages/contact.html',
-				controller  : 'contactController'
+				controller  : 'mainController'
+			})
+			.when('/congrats', {
+				templateUrl : 'pages/congrats.html',
+				controller  : 'mainController'
 			})
 
 			//$locationProvider.html5Mode(true);	
@@ -61,7 +65,7 @@
 	    			var url = "/checkout/preferences";
 					MELI.post(url, jsonToPost, function(data) {
 						$scope.initPoint = data[2].init_point;
-						$location.path('pages/congrats.html');
+						$location.path('/congrats');
 					});
 				});
 			}
