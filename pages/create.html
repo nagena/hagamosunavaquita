@@ -40,7 +40,7 @@
 					<dt>Ponen plata:</dt>
 					<dd id="quantityForAmount" name="quantityForAmount">{{items.length -- meIncluded}}</dd>
 					<dt>Cuanto pone cada uno: </dt>
-					<dd id="partialAmount" name="partialAmount">{{((amount  *  1.08)/(items.length -- meIncluded)).toFixed(2)}}</dd>
+					<dd id="partialAmount" name="partialAmount" ng-model="partialAmount" ng-value="partialAmount=((amount  *  1.08)/(items.length -- meIncluded)).toFixed(2)">{{partialAmount}}</dd>
 				</dl>
 			</aside>
 			<div class="ch-form-actions">
