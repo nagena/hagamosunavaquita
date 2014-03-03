@@ -66,6 +66,7 @@
 					MELI.post(url, jsonToPost, function(data) {
 						$scope.initPoint = data[2].init_point;
 						$location.path('/congrats');
+						$scope.$apply();
 					});
 				});
 			}
