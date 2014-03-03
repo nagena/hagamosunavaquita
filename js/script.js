@@ -3,7 +3,6 @@
 
 	// configure our routes
 	vaquitaApp.config(function($locationProvider, $routeProvider) {
-		//$locationProvider.html5Mode(true);
 		$routeProvider
 			.when('/', {
 				templateUrl : 'pages/home.html',
@@ -23,10 +22,8 @@
 			})
 			.when('/congrats', {
 				templateUrl : 'pages/congrats.html',
-				controller  : 'mainController'
+				controller  : 'congratsController'
 			})
-
-			//$locationProvider.html5Mode(true);	
 		});
 
 	// create the controller and inject Angular's $scope
@@ -39,11 +36,12 @@
 		$scope.message = 'Look! I am an about page.';
 	});
 
-	vaquitaApp.controller('contactController', function($scope) {
+	vaquitaApp.controller('congratsController', function($scope,preferenceService) {
 		$scope.message = 'Contact us! JK. This is just a demo.';
+		$scope.initPoint = preferenceService.getPreferenceResponse()[2].init_point;
 	});
 
-	vaquitaApp.controller('validateController', function($scope, $http, $location) {
+	vaquitaApp.controller('validateController', function($scope, $http, $location, preferenceService) {
 		$scope.items = [{email:""}];
         $scope.add = function () {
           $scope.items.push({ 
@@ -64,7 +62,7 @@
 					var jsonToPost =  {'items': [{'id': '123','title': $scope.description, 'quantity': 1, 'unit_price': parseFloat($scope.partialAmount), 'currency_id': 'ARS', 'picture_url': 'http://hagamosunavaquita.com.ar/cowww.png'}]};
 	    			var url = "/checkout/preferences";
 					MELI.post(url, jsonToPost, function(data) {
-						$scope.initPoint = data[2].init_point;
+						preferenceService.savePreferenceResponse(data);
 						$location.path('/congrats');
 						$scope.$apply();
 					});
@@ -72,6 +70,20 @@
 			}
 		};
 	});
+
+	vaquitaApp.factory('preferenceService', function () {
+        var preferenceResponse = {};
+
+        return {
+            savePreferenceResponse:function (data) {
+                preferenceResponse = data;
+                console.log(data);
+            },
+            getPreferenceResponse:function () {
+                return preferenceResponse;
+            }
+        };
+    });
 
 
 
