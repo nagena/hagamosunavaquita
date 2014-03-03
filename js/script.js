@@ -39,7 +39,7 @@
 		$scope.message = 'Contact us! JK. This is just a demo.';
 	});
 
-	vaquitaApp.controller('validateController', function($scope) {
+	vaquitaApp.controller('validateController', function($scope, $http) {
 		$scope.items = [{email:""}];
         $scope.add = function () {
           $scope.items.push({ 
