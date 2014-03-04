@@ -40,7 +40,7 @@
 		$scope.finalAmount = amountService.getTotal();
 	});
 
-	vaquitaApp.controller('validateController', function($scope, $http, $location, preferenceService) {
+	vaquitaApp.controller('validateController', function($scope, $http, $location, preferenceService, amountService) {
 		$scope.items = [{email:""}];
         $scope.add = function () {
           $scope.items.push({ 
