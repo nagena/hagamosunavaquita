@@ -33,7 +33,7 @@
 	vaquitaApp.controller('aboutController', function($scope) {
 	});
 
-	vaquitaApp.controller('congratsController', function($scope,preferenceService) {
+	vaquitaApp.controller('congratsController', function($scope,preferenceService, amountService) {
 		$scope.initPoint = preferenceService.getPreferenceResponse()[2].init_point;
 		$scope.description = preferenceService.getPreferenceResponse()[2].items[0].title;
 		$scope.partialAmount = preferenceService.getPreferenceResponse()[2].items[0].unit_price;
