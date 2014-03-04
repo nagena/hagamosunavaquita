@@ -1,4 +1,3 @@
-{{message}}
 	<section class="create" ng-controller="validateController">	
 		<form class="ch-form" name="createForm" id="createForm"  ng-submit="submitForm()" novalidate>	
 			<input type="hidden" id="initPoint" name="initPoint" value="">
@@ -35,9 +34,9 @@
 					<dt>Hay que juntar: </dt>
 					<dd>{{amount}}</dd>
 					<dt>Costo del servicio: <i id="servicesCostsHelp" class="ch-icon-question-sign"></i></dt>
-					<dd id="serviceAmount" name="serviceAmount">{{(amount *  0.08).toFixed(2)}}</dd>
+					<dd ng-model="serviceAmount">{{(amount *  0.08).toFixed(2)}}</dd>
 					<dt>Monto Total a Pagar: </dt>
-					<dd id="finalAmount" name="finalAmount">{{(amount  *  1.08).toFixed(2)}}</dd>
+					<dd ng-value="finalAmount=(amount  *  1.08).toFixed(2)">{{finalAmount}}</dd>
 					<dt>Ponen plata:</dt>
 					<dd id="quantityForAmount" name="quantityForAmount">{{items.length -- meIncluded}}</dd>
 					<dt>Cuanto pone cada uno: </dt>

@@ -28,17 +28,16 @@
 
 	// create the controller and inject Angular's $scope
 	vaquitaApp.controller('mainController', function($scope) {
-		// create a message to display in our view
-		$scope.message = 'Everyone come and see how good I look!';
 	});
 
 	vaquitaApp.controller('aboutController', function($scope) {
-		$scope.message = 'Look! I am an about page.';
 	});
 
 	vaquitaApp.controller('congratsController', function($scope,preferenceService) {
-		$scope.message = 'Contact us! JK. This is just a demo.';
 		$scope.initPoint = preferenceService.getPreferenceResponse()[2].init_point;
+		$scope.description = preferenceService.getPreferenceResponse()[2].items[0].description;
+		$scope.partialAmount = preferenceService.getPreferenceResponse()[2].items[0].unit_price;
+
 	});
 
 	vaquitaApp.controller('validateController', function($scope, $http, $location, preferenceService) {
