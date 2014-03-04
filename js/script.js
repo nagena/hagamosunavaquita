@@ -35,9 +35,9 @@
 
 	vaquitaApp.controller('congratsController', function($scope,preferenceService) {
 		$scope.initPoint = preferenceService.getPreferenceResponse()[2].init_point;
-		$scope.description = preferenceService.getPreferenceResponse()[2].items[0].description;
+		$scope.description = preferenceService.getPreferenceResponse()[2].items[0].title;
 		$scope.partialAmount = preferenceService.getPreferenceResponse()[2].items[0].unit_price;
-
+		$scope.finalAmount = amountService.getTotal();
 	});
 
 	vaquitaApp.controller('validateController', function($scope, $http, $location, preferenceService) {
@@ -62,6 +62,7 @@
 	    			var url = "/checkout/preferences";
 					MELI.post(url, jsonToPost, function(data) {
 						preferenceService.savePreferenceResponse(data);
+						amountService.saveTotal($scope.finalAmount);
 						$location.path('/congrats');
 						$scope.$apply();
 					});
@@ -76,10 +77,22 @@
         return {
             savePreferenceResponse:function (data) {
                 preferenceResponse = data;
-                console.log(data);
             },
             getPreferenceResponse:function () {
                 return preferenceResponse;
+            }
+        };
+    });
+
+    vaquitaApp.factory('amountService', function () {
+        var total = {};
+
+        return {
+            saveTotal:function (totalAmount) {
+                total = totalAmount;
+            },
+            getTotal:function () {
+                return total;
             }
         };
     });
