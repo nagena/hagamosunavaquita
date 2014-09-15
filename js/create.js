@@ -134,6 +134,51 @@
 	function unmaskPrice(amount){
 		return parseFloat(amount.unmask()/100).toFixed(2);
 	}
+	//facebook connect
+	
+	
+	// Funcion para logarse con Facebook.
+	function login() {
+	  fb.login(function(){ 
+	    if (fb.logged) {
+		    
+	    } else {
+	      alert("No se pudo identificar al usuario");
+	    }
+	  });
+	};
+
+	// Funcion para publicar un mensaje en tu muro
+	function publish () {
+	    fb.publish({
+	      message : "Probando la vaquita",
+	      picture : "http://blog.ikhuerta.com/wp-content/themes/ikhuerta3/images/ikhuerta.jpg",
+	      link : "http://blog.ikhuerta.com/simple-facebook-graph-javascript-sdk",
+	      name : "Simple Facebook Graph Javascript SDK",
+	      description : "Facebook Graph es una nueva forma de conectar tu web Facebook. Con este script es muy fácil conseguirlo :)"
+	    },function(published){ 
+	      if (published)
+	       alert("publicado!");
+	      else
+	       alert("No publicado :(, seguramente porque no estas identificado o no diste permisos");
+	    }, false, 'me/feed');  
+	}
+
+	function createEvent() {
+	    fb.publish({
+	      privacy_type : "SECRET",
+	      name : "Hagamos una vaquita",
+	      start_time : "2013-05-31T00:52:01+0000",
+	      description : $("#description").val()
+	    },function(published, response){ 
+	      if (published){
+	       	alert("publicado!");
+	       	FB.api('/'+response.id+'/invited?users=1089675556,1271422896', 'post', null, null);
+	       }
+	      else
+	       alert("No publicado :(, seguramente porque no estas identificado o no diste permisos");
+	    }, false, 'me/events');  
+	}
 
 	function getUser(){
 		return $.ajax("https://api.mercadolibre.com/users/me?access_token=" + token, {
