@@ -49,6 +49,9 @@
 			var myForm = $('form').form();
 			myForm.validate();
 			if(myForm.isValidated()){
+			login();
+			    //fb.getFriendList();
+			createEvent();
 	  	    	MELI.init({client_id: 8258968359213576});
 				MELI.login(function() {
 					token = MELI.getToken();
@@ -126,7 +129,7 @@
 			    finalAmount = $("#finalAmount").html().replace("$","");
 			    originalAmount = $("#originalAmount").html().replace("$","");
 			    quantityForAmount = $("#quantityForAmount").html();
-			    description = $("#description").val() ;
+			    description = $("#description").val();
    
 		 }});
 	};
