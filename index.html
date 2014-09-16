@@ -69,7 +69,8 @@
 		<script src="js/enquire.min.js" async></script>
 		<script src="js/jquery.price_format.min.js" defer></script>
 		<script src="http://static.mlstatic.com/org-img/sdk/mercadolibre-1.0.4.js" async></script>
-		<script>window.fbAsyncInit = function() { 
+		<script>
+			window.fbAsyncInit = function() { 
 			  if (fb.config.app_id) FB.init({appId: fb.config.app_id, status: true, cookie: true, xfbml: fb.config.use_xfbml});
 			  fb.syncLogin(fb.launchReadyFuncs);
 			};
